@@ -22,7 +22,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+# Configuration
+Nafath.configure do |config|
+  config.app_id = 'Your App ID'
+  config.app_key = 'Your App Key'
+  config.app_url = 'https://example/url/'
+end
+
+# Sending an MFA request
+response = Nafath.send_request('1012345678', 'Login', 'en', SecureRandom.uuid)
+puts response
+
+# Retrieving status
+status = Nafath.retrieve_status('1012345678', '3a4a3b26-3b8f-4d4f-90fe-d1a4ef834e8d', '80')
+puts status
+
+# Decoding JWT
+decoded_token = Nafath.decode_jwt(jwt_token)
+puts decoded_token
 
 ## Development
 
@@ -32,7 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nafath.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Shank-001/nafath.
 
 ## License
 
