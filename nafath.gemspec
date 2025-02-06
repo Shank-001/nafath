@@ -40,6 +40,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 0.80"
 
+  s.post_install_message = <<~MESSAGE
+    🎉 Thank you for installing the Nafath Gem! 🎉
+    🙌 Happy coding!
+  MESSAGE
+
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
