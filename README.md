@@ -4,10 +4,10 @@ The Nafath Gem provides a simple and efficient integration with the Nafath Ident
 
 Features:
 
-    Send requests for user authentication via the Nafath API.
-    Retrieve the status of authentication requests.
-    Handle JWT-based callback responses securely.
-    Easily configurable with your Nafath credentials.
+* Send requests for user authentication via the Nafath API.
+* Retrieve the status of authentication requests.
+* Handle JWT-based callback responses securely.
+* Easily configurable with your Nafath credentials.
 
 This gem simplifies the process of integrating Nafath services into your application, ensuring secure and reliable identity verification with minimal setup.
 <!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nafath`. To experiment with that code, run `bin/console` for an interactive prompt.
@@ -32,19 +32,23 @@ Or install it yourself as:
 
 ## Usage
 
-Url for Pre-Prod (Testing): ``` 'https://nafath.api.elm.sa/stg/' ``` 
-Url for Prod:               ``` 'https://nafath.api.elm.sa/' ```
+URL for Pre-Prod (Testing): ``` 'https://nafath.api.elm.sa/stg/' ```
+
+URL for Prod:               ``` 'https://nafath.api.elm.sa/' ```
+
+
+### Configuration:
+
+First make an initializer nafath.rb inside config/initializers and add the configurations (Currently Unsupported)
 
 ```ruby
-# Configuration
-
 Nafath.configure do |config|
   config.app_id  = 'Your App ID'
   config.app_key = 'Your App Key'
   config.app_url = 'https://nafath.api.elm.sa/stg/'
 end
 ```
-Or
+Or else add set these variables in `.env` file. (Please prefer this for now. 🙂)
 
 ```ruby
 NAFATH_APP_ID  = 'Your App ID'
