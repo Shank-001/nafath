@@ -32,7 +32,13 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency "httparty", "~> 0.22.0"
-  spec.add_dependency "jwt", "~> 2.10.1"  
+  spec.add_dependency "jwt", "~> 2.10.1"
+  spec.add_dependency "logger"
+
+  spec.add_development_dependency "byebug"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.80"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
