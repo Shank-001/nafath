@@ -48,7 +48,7 @@ Nafath.configure do |config|
   config.app_url = 'https://nafath.api.elm.sa/stg/'
 end
 ```
-Or else add set these variables in `.env` file. (Please prefer this for now. 🙂)
+Or else add these variables in `.env` file. (Please prefer this for now. 🙂)
 
 ```ruby
 NAFATH_APP_ID  = 'Your App ID'
