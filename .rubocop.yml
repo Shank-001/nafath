@@ -8,3 +8,47 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'cluster/*'
+    - twilio-ruby.gemspec
+
+Layout/HeredocIndentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 175
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/ParameterLists:
+  Max: 20
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false

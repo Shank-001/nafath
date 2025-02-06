@@ -1,8 +1,18 @@
 # Nafath
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nafath`. To experiment with that code, run `bin/console` for an interactive prompt.
+The Nafath Gem provides a simple and efficient integration with the Nafath Identity Verification Service, allowing Ruby and Ruby on Rails applications to leverage Nafath's secure MFA (Multi-Factor Authentication) and identity verification features.
 
-TODO: Delete this and the text above, and describe your gem
+Features:
+
+    Send requests for user authentication via the Nafath API.
+    Retrieve the status of authentication requests.
+    Handle JWT-based callback responses securely.
+    Easily configurable with your Nafath credentials.
+
+This gem simplifies the process of integrating Nafath services into your application, ensuring secure and reliable identity verification with minimal setup.
+<!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nafath`. To experiment with that code, run `bin/console` for an interactive prompt.
+
+TODO: Delete this and the text above, and describe your gem -->
 
 ## Installation
 
@@ -22,7 +32,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Url for Pre-Prod (Testing): ``` 'https://nafath.api.elm.sa/stg/' ``` 
+Url for Prod:               ``` 'https://nafath.api.elm.sa/' ```
+
+```ruby
+# Configuration
+
+Nafath.configure do |config|
+  config.app_id  = 'Your App ID'
+  config.app_key = 'Your App Key'
+  config.app_url = 'https://nafath.api.elm.sa/stg/'
+end
+```
+Or
+
+```ruby
+NAFATH_APP_ID  = 'Your App ID'
+NAFATH_APP_KEY = 'Your App Key'
+NAFATH_API_URL = 'https://nafath.api.elm.sa/stg/'
+```
+
+
+```ruby
+# Sending an MFA request
+response = Nafath.send_request('10xxxxxx78', 'Login', 'en', SecureRandom.uuid)
+# Refer Official Doc for Service types, e.g. 'Login', 'DigitalServiceEnrollmentWithoutBio'  
+puts response
+
+# Retrieving status
+status = Nafath.retrieve_status('10xxxxxx78', '3a4axxxx-xxxx-xxxx-xxxx-xxxxef834e8d', '80')
+puts status
+
+# Decoding JWT
+decoded_token = Nafath.decode_jwt(jwt_token)
+puts decoded_token
+```
 
 ## Development
 
@@ -32,7 +76,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nafath.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Shank-001/nafath.
 
 ## License
 
