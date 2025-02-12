@@ -4,10 +4,10 @@ require "jwt"
 module Nafath
   class NafathCallbackService
     include HTTParty
-    base_uri ENV["NAFATH_API_URL"]
+    base_uri Nafath.configuration.app_url
 
-    headers "APP-ID" => ENV["NAFATH_APP_ID"],
-            "APP-KEY" => ENV["NAFATH_APP_KEY"],
+    headers "APP-ID" => Nafath.configuration.app_id,
+            "APP-KEY" => Nafath.configuration.app_key,
             "Content-Type" => "application/json"
 
     @logger = LogHelper.logger
