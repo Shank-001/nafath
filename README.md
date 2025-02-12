@@ -68,6 +68,9 @@ status = Nafath.retrieve_status('10xxxxxx78', '3a4axxxx-xxxx-xxxx-xxxx-xxxxef834
 puts status
 
 # Decoding JWT
+jwt_token = params[:token]
+trans_id = params[:transId]
+request_id = params[:requestId]
 decoded_token = Nafath.decode_jwt(jwt_token)
 puts decoded_token
 ```
