@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "rails"
   spec.add_dependency "httparty"
   spec.add_dependency "jwt"
   spec.add_dependency "logger"

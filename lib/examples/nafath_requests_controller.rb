@@ -64,7 +64,7 @@ module V1
                       status: :not_found
       end
 
-      logger.info("Matching Personal Information and Account ID in Callback: 
+      logger.info("Matching Personal Information and Account ID in Callback:
                     PID:#{matching_personal_info.id} AID:#{matching_personal_info&.account&.id}")
       user_info = Nafath.decode_jwt(jwt_token)
 
